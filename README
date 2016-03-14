@@ -1,3 +1,7 @@
+# libcablintpq
+Embed Ruby and run cablint from a PostgreSQL function.
+
+
 Use a custom build of Ruby 2.0, because for some reason it crashes with Ruby 2.1+.
 
 Login as root, then...
