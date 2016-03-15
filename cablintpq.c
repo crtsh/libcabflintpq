@@ -72,7 +72,7 @@ void sure_require(
 void _PG_init(void)
 {
 	/* For certlint-x509helper */
-	setenv("PATH", "/usr/local/certlint/bin", 1);
+	setenv("PATH", "/usr/local/certlint/build-x509helper/asn1c/examples/pkix1", 1);
 
 	ruby_init();
 	ruby_script("runcablint");
