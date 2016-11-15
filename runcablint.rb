@@ -6,14 +6,18 @@ require 'enc/trans/transdb'
 require 'certlint'
 
 def runcablint(raw)
-  m = CertLint::CABLint.lint(raw)
   m2 = []
-  m.each do |msg|
-    begin
-      m2 << msg
-    rescue Encoding::UndefinedConversionError
-      m2 << "F: Encoding::UndefinedConversionError"
+  begin
+    m = CertLint::CABLint.lint(raw)
+    m.each do |msg|
+      begin
+        m2 << msg
+      rescue Encoding::UndefinedConversionError
+        m2 << "F: Encoding::UndefinedConversionError"
+      end
     end
+  rescue => e
+    m2 << "F: #{e} Exception"
   end
   return m2
 end
