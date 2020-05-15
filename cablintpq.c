@@ -74,7 +74,6 @@ void _PG_init(void)
 	ruby_init();
 	ruby_script("runcablint");
 	ruby_init_loadpath();
-	ruby_incpush("/usr/local");
 	ruby_incpush("/usr/local/certlint/lib");
 	ruby_incpush("/usr/local/certlint/ext");
 	sure_require("runcablint.rb");
